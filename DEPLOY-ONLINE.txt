@@ -1,0 +1,28 @@
+HLELOFX ONLINE HOSTING — NO PYTHON NEEDED FOR YOUR VISITORS
+
+This package is prepared for deployment on Render. Hosting is not live yet; you must create the hosting project under your own account.
+
+ONE-TIME SETUP
+1. Create/sign in to a GitHub account at https://github.com
+2. Create a new repository named hlelofx (Private is recommended).
+3. Upload the files/folders from this package into the repository (the contents, not the ZIP itself).
+4. Create/sign in to https://render.com and choose New + > Web Service.
+5. Connect the GitHub repository.
+6. Use:
+   Build Command: pip install -r requirements.txt
+   Start Command: gunicorn server:app
+7. In Render Environment, set:
+   HLELOFX_OWNER_EMAIL = hlelomabuza@icloud.com
+   HLELOFX_OWNER_PASSWORD = choose a NEW strong password
+   HLELOFX_SECRET_KEY = a long random secret value
+8. Deploy. Render will provide a public URL ending in onrender.com.
+9. Share that URL with friends. Visitors can use a browser on iOS, Android, Mac, Windows, etc.; they do not install Python.
+10. Owner portal is your public URL plus /owner.
+
+IMPORTANT LIMITS / SECURITY
+- Do not share your owner password.
+- Email wall records emails and timestamps; email addresses are not verified by email confirmation.
+- Tell visitors clearly that their email/access time is logged and follow applicable privacy rules.
+- This app currently uses SQLite on local app storage. Some hosting services erase local storage on redeploy/restart; for durable logs, attach a persistent disk or migrate to a managed database before relying on records.
+- Screenshot scanner is a rough colour heuristic, not a real AI model. It can misclassify charts. Trade levels are examples, not guaranteed signals or financial advice.
+- I have not created the Render/GitHub accounts or deployed this app; the public URL will only exist after you complete the one-time setup.
