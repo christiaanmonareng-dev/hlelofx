@@ -19,25 +19,8 @@ main{max-width:1400px;margin:auto;padding:28px 5vw 50px}.hero{display:grid;grid-
 .chart-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.chart-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 17px;border-bottom:1px solid var(--line);flex-wrap:wrap}.chart-title{font-weight:800;font-size:16px}.controls{display:flex;gap:7px;flex-wrap:wrap}.controls button,.secondary{border:1px solid #2b384e;background:#151f2e;color:#c4cede;border-radius:8px;padding:8px 11px;cursor:pointer}.controls button.active{background:#17372f;border-color:#2b9d78;color:#8df2c6}.tvchart{height:500px;width:100%}.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.info{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:18px}.info h3{margin:0 0 10px;font-size:14px}.info p{color:#a5b0c3;line-height:1.65;margin:0}.signal{display:flex;align-items:center;gap:10px;margin:12px 0}.signal-pill{padding:6px 9px;border-radius:7px;background:#202b3d;color:#d5e0f1;font-size:11px;font-weight:800}.signal-pill.green{background:#12372d;color:#74edbb}.upload{border:1px dashed #3a4a62;background:#0d1420;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.upload input{max-width:100%;color:var(--muted)}#preview{display:none;max-width:100%;max-height:220px;border-radius:10px;margin-top:12px;border:1px solid var(--line)}.foot{color:#738098;font-size:11px;line-height:1.7;margin-top:24px;border-top:1px solid #1e2938;padding-top:16px}
 @media(max-width:800px){header{padding:0 18px}.hero{grid-template-columns:1fr}.hero-art{height:160px}.markets{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}main{padding:22px 16px 35px}.tvchart{height:420px}.hero h1{letter-spacing:-1px}}
 </style>
-
-<style>
-#emailGate{position:fixed;inset:0;z-index:99999;background:rgba(3,6,12,.94);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px}
-#emailGate .gate-card{width:min(440px,100%);background:#101622;border:1px solid #2a394e;border-radius:20px;padding:26px;box-shadow:0 24px 90px #0009}
-#emailGate h2{font-size:25px;margin:0 0 8px}#emailGate p{color:#a5b0c3;line-height:1.6}
-#emailGate input{width:100%;box-sizing:border-box;background:#080d16;color:#eef3fb;border:1px solid #33435a;border-radius:10px;padding:13px;margin:8px 0 12px;font:inherit}
-#emailGate button{width:100%;border:0;border-radius:10px;padding:13px;background:#36e0a1;color:#06130f;font-weight:900;cursor:pointer}
-#emailGate .fine{font-size:11px;color:#8794aa}#emailGate .err{color:#ff8290;font-size:12px;min-height:16px}
-.owner-link{color:#8291a9;text-decoration:none;font-size:11px}.owner-link:hover{color:#36e0a1}
-</style>
 </head>
 <body>
-<a id="ownerPortalShortcut" href="/owner">OWNER PORTAL ↗</a>
-<style>
-#ownerPortalShortcut{position:fixed;top:16px;right:18px;z-index:99999;background:#36e0a1;color:#06120e;text-decoration:none;font-weight:900;padding:12px 16px;border-radius:11px;border:1px solid #77f0c0;box-shadow:0 5px 24px #0008}
-#ownerPortalShortcut:hover{filter:brightness(1.08)}
-@media(max-width:650px){#ownerPortalShortcut{top:8px;right:8px;padding:9px 11px;font-size:11px}}
-</style>
-
 <header><div class="brand"><div class="logo">H</div>Hlelo<span>FX</span></div><div class="status"><span class="dot"></span> LIVE CHARTS CONNECTED</div></header>
 <main>
 <section class="hero"><div><div class="eyebrow">Market intelligence terminal</div><h1>Trade the move.<br><em>Not the noise.</em></h1><p>One clean dashboard for gold, crypto and forex. Explore live market charts, switch timeframes, and upload a chart screenshot for your own review.</p></div>
@@ -53,7 +36,7 @@ main{max-width:1400px;margin:auto;padding:28px 5vw 50px}.hero{display:grid;grid-
 <div class="chart-panel"><div class="chart-toolbar"><div><div class="chart-title" id="chartName">Gold / USD · XAUUSD</div><div class="sub">Interactive candles · indicators · drawing tools</div></div><div class="controls" id="timeframes"><button data-interval="5" class="active">5m</button><button data-interval="15">15m</button><button data-interval="60">1H</button><button data-interval="240">4H</button><button data-interval="D">1D</button></div></div><div class="tvchart" id="chart"></div></div>
 <div class="analysis-grid"><div class="info"><h3>HleloFX AI-style market assistant</h3><div class="signal"><span class="signal-pill green">LIVE TECHNICAL READ</span><span class="sub">Indicator-based · Not a guaranteed prediction</span></div><p>Get a live technical summary for the selected market. This uses TradingView’s technical-analysis ratings (moving averages and oscillators) as a decision aid, rather than inventing an AI prediction. Always check the chart and manage risk.</p><div id="taWidget" style="margin-top:14px;min-height:280px"></div><p class="sub" style="margin-top:10px">The rating can change as market prices change. It is not financial advice.</p></div>
 <div class="info"><h3>Upload a chart screenshot</h3><p style="margin-bottom:13px">Add a screenshot from your chart. It stays in this page preview; no analysis is sent to a server.</p><div class="upload"><input type="file" id="imageInput" accept="image/*"><button class="secondary" id="clearImage">Clear image</button></div><img id="preview" alt="Uploaded chart preview"></div></div>
-<div class="foot"><a class="owner-link" href="/owner">Owner dashboard ↗</a> &nbsp;·&nbsp; Market information is provided by TradingView and may be delayed depending on the instrument and data source. HleloFX is an informational demo, not financial advice. No broker account is connected and this page cannot place trades. Internet connection is required for live widgets.</div>
+<div class="foot">Market information is provided by TradingView and may be delayed depending on the instrument and data source. HleloFX is an informational demo, not financial advice. No broker account is connected and this page cannot place trades. Internet connection is required for live widgets.</div>
 </main>
 <script>
 const symbols = { 'OANDA:XAUUSD':'Gold / USD · XAUUSD','BINANCE:BTCUSDT':'Bitcoin · BTCUSD proxy','OANDA:EURUSD':'Euro / USD · EURUSD' };
@@ -96,158 +79,5 @@ input.addEventListener('change',()=>{const f=input.files&&input.files[0];if(!f)r
 document.getElementById('clearImage').addEventListener('click',()=>{input.value='';preview.removeAttribute('src');preview.style.display='none';if(previewUrl)URL.revokeObjectURL(previewUrl);previewUrl=null});
 loadChart();
 loadTechnicalAnalysis();
-</script>
-
-
-<section id="riskTool" style="max-width:1400px;margin:0 auto 32px;padding:0 5vw">
-  <div style="background:#101622;border:1px solid #253044;border-radius:18px;padding:22px">
-    <div class="eyebrow">HLELOFX TRADE PLAN</div>
-    <h2 style="margin:8px 0">Buy or nah?</h2>
-    <p style="color:#a5b0c3;line-height:1.6;margin-top:0">Use the TradingView technical rating below as a signal guide. Then calculate example stop-loss and take-profit levels. This is an indicator, not a guaranteed prediction or a personal financial recommendation.</p>
-    <div id="taWidget" style="min-height:230px"></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:18px">
-      <label style="display:grid;gap:7px;color:#a5b0c3">Trade direction
-        <select id="tradeSide" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-          <option value="buy">BUY (long)</option><option value="sell">SELL (short)</option>
-        </select>
-      </label>
-      <label style="display:grid;gap:7px;color:#a5b0c3">Entry price (from chart)
-        <input id="entryPrice" type="number" step="any" min="0" placeholder="Enter current price" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-      </label>
-      <label style="display:grid;gap:7px;color:#a5b0c3">Stop distance (%)
-        <input id="stopPct" type="number" step="0.1" min="0.1" max="20" value="1" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-      </label>
-      <label style="display:grid;gap:7px;color:#a5b0c3">Risk/reward target
-        <select id="rrTarget" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-          <option value="1.5">1 : 1.5</option><option value="2" selected>1 : 2</option><option value="3">1 : 3</option>
-        </select>
-      </label>
-    </div>
-    <button id="calcPlan" type="button" style="margin-top:14px;padding:12px 18px;border:0;border-radius:9px;background:#36e0a1;color:#071018;font-weight:900;cursor:pointer">Calculate SL & TP</button>
-    <div id="planResult" aria-live="polite" style="margin-top:14px;color:#eef3fb;line-height:1.8">Enter the chart price, then calculate your example levels.</div>
-    <p style="font-size:11px;color:#8794aa;line-height:1.5">The entry price is entered manually because the embedded chart does not share its live price with this calculator. Levels are mathematical examples only; spread, slippage, volatility and broker pricing can change outcomes.</p>
-  </div>
-</section>
-<script>
-(function(){
- const target=document.getElementById('taWidget');
- if(target){
-   const wrap=document.createElement('div');wrap.className='tradingview-widget-container';wrap.style.width='100%';
-   const inner=document.createElement('div');inner.className='tradingview-widget-container__widget';
-   const script=document.createElement('script');script.type='text/javascript';script.async=true;
-   script.src='https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
-   script.text=JSON.stringify({interval:'1h',width:'100%',isTransparent:true,height:260,symbol:'OANDA:XAUUSD',showIntervalTabs:true,displayMode:'single',locale:'en',colorTheme:'dark'});
-   wrap.append(inner,script);target.append(wrap);
- }
-})();
-(function(){
- const $=id=>document.getElementById(id);
- $('calcPlan').addEventListener('click',()=>{
-   const entry=Number($('entryPrice').value), pct=Number($('stopPct').value), rr=Number($('rrTarget').value), side=$('tradeSide').value;
-   const out=$('planResult');
-   if(!(entry>0) || !(pct>0) || pct>20){out.textContent='Enter a valid entry price and a stop distance between 0.1% and 20%.';return;}
-   const distance=entry*pct/100, sl=side==='buy'?entry-distance:entry+distance, tp=side==='buy'?entry+distance*rr:entry-distance*rr;
-   const fmt=n=>Number(n.toPrecision(8)).toString();
-   out.innerHTML='<strong>'+side.toUpperCase()+' example</strong><br>Entry: '+fmt(entry)+'<br><span style="color:#ff657a">Stop loss: '+fmt(sl)+'</span><br><span style="color:#36e0a1">Take profit: '+fmt(tp)+'</span><br>Risk distance: '+fmt(distance)+' · Reward distance: '+fmt(distance*rr);
- });
-})();
-</script>
-
-<section id="screenshotScanner" style="max-width:1400px;margin:30px auto;padding:0 5vw">
- <div style="background:#101622;border:1px solid #29364b;border-radius:18px;padding:22px;color:#eef3fb">
-  <div style="color:#36e0a1;font-weight:900;letter-spacing:2px;font-size:12px">HLELOFX SCREENSHOT SCANNER</div>
-  <h2 style="margin:8px 0 6px">Upload a chart. Build a trade plan.</h2>
-  <p style="color:#a5b0c3;line-height:1.6">Upload a screenshot of your trading chart, press Scan Screenshot, then review a rough visual signal and example stop-loss/take-profit levels. This browser-only prototype does not use a trained AI vision model and cannot reliably read every chart, so verify the setup yourself before risking money.</p>
-  <label for="chartShot" style="display:block;margin:15px 0 8px;font-weight:700">1. Upload chart screenshot</label>
-  <input id="chartShot" type="file" accept="image/*" style="display:block;width:100%;padding:12px;background:#080d16;border:1px solid #33435a;border-radius:10px;color:#dce5f4">
-  <div id="shotPreviewWrap" style="display:none;margin-top:12px"><img id="shotPreview" alt="Uploaded trading chart preview" style="display:block;max-width:100%;max-height:380px;border-radius:12px;border:1px solid #33435a"><div id="shotName" style="font-size:12px;color:#8f9bb0;margin-top:6px"></div></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px;margin-top:16px">
-   <label style="display:grid;gap:7px;color:#a5b0c3">Market
-    <select id="scanMarket" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a"><option>XAUUSD (Gold)</option><option>EURUSD</option><option>BTCUSD</option><option>Other</option></select>
-   </label>
-   <label style="display:grid;gap:7px;color:#a5b0c3">Entry price
-    <input id="scanEntry" type="number" min="0" step="any" placeholder="Type chart price" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-   </label>
-   <label style="display:grid;gap:7px;color:#a5b0c3">Stop distance (%)
-    <input id="scanStopPct" type="number" min="0.1" max="20" step="0.1" value="1" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a">
-   </label>
-   <label style="display:grid;gap:7px;color:#a5b0c3">Risk/reward
-    <select id="scanRR" style="padding:12px;border-radius:9px;background:#080d16;color:#eef3fb;border:1px solid #33435a"><option value="1.5">1 : 1.5</option><option value="2" selected>1 : 2</option><option value="3">1 : 3</option></select>
-   </label>
-  </div>
-  <button id="scanShotBtn" type="button" style="margin-top:16px;padding:13px 18px;border:0;border-radius:10px;background:#36e0a1;color:#06120e;font-weight:900;cursor:pointer">SCAN SCREENSHOT</button>
-  <div id="scanOutput" aria-live="polite" style="margin-top:16px;padding:15px;border-radius:12px;background:#080d16;border:1px solid #29364b;line-height:1.8">Upload a screenshot to begin. The scan uses a basic pixel-color heuristic only; it is not genuine AI chart interpretation.</div>
- </div>
-</section>
-<script>
-(function(){
- const fileInput=document.getElementById('chartShot');
- const previewWrap=document.getElementById('shotPreviewWrap');
- const preview=document.getElementById('shotPreview');
- const output=document.getElementById('scanOutput');
- let imageReady=false;
- fileInput.addEventListener('change',()=>{
-   const f=fileInput.files && fileInput.files[0];
-   imageReady=false;
-   if(!f){previewWrap.style.display='none';return;}
-   if(!f.type.startsWith('image/')){output.textContent='Please choose an image file.';return;}
-   if(f.size>12*1024*1024){output.textContent='That image is over 12 MB. Please upload a smaller screenshot.';fileInput.value='';return;}
-   const url=URL.createObjectURL(f);
-   preview.onload=()=>{imageReady=true;};
-   preview.src=url;previewWrap.style.display='block';
-   document.getElementById('shotName').textContent=f.name;
-   output.textContent='Screenshot loaded. Enter the price shown on your chart, then press SCAN SCREENSHOT.';
- });
- document.getElementById('scanShotBtn').addEventListener('click',()=>{
-   const f=fileInput.files && fileInput.files[0];
-   const entry=Number(document.getElementById('scanEntry').value);
-   const pct=Number(document.getElementById('scanStopPct').value);
-   const rr=Number(document.getElementById('scanRR').value);
-   if(!f){output.textContent='Upload a chart screenshot first.';return;}
-   if(!(entry>0)){output.textContent='Enter the current/entry price shown on your chart so I can calculate example levels.';return;}
-   if(!(pct>=0.1&&pct<=20)){output.textContent='Stop distance must be between 0.1% and 20%.';return;}
-   const img=document.getElementById('shotPreview');
-   try{
-    const canvas=document.createElement('canvas'), ctx=canvas.getContext('2d',{willReadFrequently:true});
-    const w=Math.min(240,img.naturalWidth||240), h=Math.min(160,img.naturalHeight||160);
-    canvas.width=w;canvas.height=h;ctx.drawImage(img,0,0,w,h);
-    const data=ctx.getImageData(0,0,w,h).data;let green=0,red=0;
-    // Coarse color count only: useful as a visual demo, not reliable candle recognition.
-    for(let i=0;i<data.length;i+=16){
-      const r=data[i],g=data[i+1],b=data[i+2];
-      if(g>r*1.25&&g>b*1.05&&g>75)green++;
-      if(r>g*1.25&&r>b*1.05&&r>75)red++;
-    }
-    let signal='WAIT / NO CLEAR SIGNAL', reason='The screenshot colors do not provide a reliable directional signal.';
-    if(green>red*1.18){signal='BUY BIAS (ROUGH)';reason='The sampled screenshot contains more green than red pixels. This may be UI colors, not bullish candles.';}
-    else if(red>green*1.18){signal='SELL BIAS (ROUGH)';reason='The sampled screenshot contains more red than green pixels. This may be UI colors, not bearish candles.';}
-    const side=signal.startsWith('BUY')?'buy':signal.startsWith('SELL')?'sell':'';
-    let levels='No trade levels shown for WAIT.';
-    if(side){
-      const d=entry*pct/100, sl=side==='buy'?entry-d:entry+d, tp=side==='buy'?entry+d*rr:entry-d*rr;
-      const fmt=n=>Number(n.toPrecision(8)).toString();
-      levels='<br><strong>Example entry:</strong> '+fmt(entry)+'<br><span style="color:#ff6b80"><strong>Stop loss:</strong> '+fmt(sl)+'</span><br><span style="color:#36e0a1"><strong>Take profit:</strong> '+fmt(tp)+'</span><br>Risk/reward: 1 : '+rr;
-    }
-    const color=side==='buy'?'#36e0a1':side==='sell'?'#ff6b80':'#f5c96a';
-    output.innerHTML='<div style="font-size:22px;font-weight:900;color:'+color+'">'+signal+'</div><div style="color:#a5b0c3">'+reason+'</div>'+levels+'<hr style="border-color:#29364b;margin:12px 0"><small style="color:#8f9bb0">Market: '+document.getElementById('scanMarket').value+'. This is a crude color-count demo, not AI chart analysis or a guaranteed trading signal. Confirm trend, support/resistance, volatility, spread and position size yourself. No trades are placed.</small>';
-   }catch(e){output.textContent='Could not inspect this image in the browser. Try a regular PNG or JPG screenshot.';}
- });
-})();
-</script>
-<div id="emailGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
- <div class="gate-card"><div class="eyebrow">HLELOFX ACCESS</div><h2 id="gateTitle">Welcome to HleloFX</h2>
- <p>Enter your email to access the live market dashboard. Your email and access time will be recorded so the site owner can monitor usage.</p>
- <form id="gateForm"><label for="visitorEmail">Email address</label><input id="visitorEmail" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254"><div class="err" id="gateError"></div><button type="submit">Continue to HleloFX</button></form>
- <p class="fine">By continuing, you acknowledge that your email and access timestamp are logged for website usage monitoring. No password is requested.</p></div></div>
-<script>
-(async function(){
- const gate=document.getElementById('emailGate'),form=document.getElementById('gateForm'),input=document.getElementById('visitorEmail'),err=document.getElementById('gateError');
- try{const r=await fetch('/api/session');const d=await r.json();if(d.authorized){gate.style.display='none';return;}}catch(e){}
- form.addEventListener('submit',async ev=>{ev.preventDefault();err.textContent='';const email=input.value.trim().toLowerCase();
- if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent='Enter a valid email address.';return;}
- try{const r=await fetch('/api/access',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});const d=await r.json();if(!r.ok||!d.ok){err.textContent=d.error||'Could not record access. Open this site using OPEN-HLELOFX.bat.';return;}gate.style.display='none';}
- catch(e){err.textContent='Could not connect. Open this site using OPEN-HLELOFX.bat.';}
- });
-})();
 </script>
 </body></html>
